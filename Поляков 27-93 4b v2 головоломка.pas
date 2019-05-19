@@ -6,7 +6,7 @@ begin
   read(n);
   for i:=0 to s-1 do read(b[i]);
   R:=0;
-  for i:=s+1 to n do begin
+  for i:=s to n-1 do begin
     k[b[i mod s] mod 10]+=1;
     read(b[i mod s]);
     t := b[i mod s] mod 10;
