@@ -4,7 +4,7 @@ var n,i,R,t:integer;
     b:=new Queue<integer>; // очередь
 begin
   read(n);
-  for i:=0 to s-1 do b.Enqueue(ReadInteger() mod 10);
+  for i:=1 to s do b.Enqueue(ReadInteger() mod 10);
   R:=0;
   for i:=s+1 to n do begin
     k[b.Dequeue()]+=1;
