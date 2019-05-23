@@ -19,7 +19,7 @@ begin
   for i:=0 to 6 do
     for j:=i to 6 do begin
       k:=(14-i-j) mod 7;
-      if i=j then t+=s[0,i]*(s[0,i]-1) div 2
+      if i=j then t+=s[1,k]*s[0,i]*(s[0,i]-1) div 2
       else t+=s[0,i]*s[0,j]*s[1,k];
     end;
   writeln(t);
