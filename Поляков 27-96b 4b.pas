@@ -8,11 +8,10 @@ begin
   read(x);
   while x>0 do begin
     k[b.Dequeue() mod 3]+=1;
-    if x = 0 then break;
     b.Enqueue(x);
     t+=k[(3 - x mod 3) mod 3];
     read(x)
   end;
   writeln(t);
 end.
-// 10 12 81 2 7 33 99 21 11 121 10 0 => 5
+// 10 12 81 2 7 33 99 21 11 121 10 0 => 6
