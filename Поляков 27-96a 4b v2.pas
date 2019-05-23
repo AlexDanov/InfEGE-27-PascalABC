@@ -7,8 +7,7 @@ begin
   for i:=1 to s do b.Enqueue(ReadInteger() mod 3);
   t:=0;
   for i:=s+1 to n do begin
-    x := b.Dequeue();
-    k[x]+=1;
+    k[b.Dequeue()]+=1;
     x := ReadInteger() mod 3; 
     b.Enqueue(x);
     t+=k[(3 - x) mod 3];
