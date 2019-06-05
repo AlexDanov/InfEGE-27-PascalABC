@@ -12,12 +12,13 @@ begin
   for i:=0 to 6 do
     for j:=i to 6 do begin
       k:=(14-i-j) mod 7; 
-      // Н+Н+Н
-      if (i=j) and (j=k) then t+=s[i]*(s[i]-1)*(s[i]-2) div 6
-      else if i=j then t+=s[k]*s[i]*(s[i]-1) div 2
-      else if i=k then t+=s[j]*s[i]*(s[i]-1) div 2
-      else if k=j then t+=s[i]*s[k]*(s[k]-1) div 2
-      else t+=s[i]*s[j]*s[k];
+      // Н+Н+Н 
+      if j<=k then // чтобы не дублировать 0 3 4 и 0 4 3 и т.п.
+        if (i=j) and (j=k) then t+=s[i]*(s[i]-1)*(s[i]-2) div 6
+        else if i=j then t+=s[k]*s[i]*(s[i]-1) div 2
+        else if i=k then t+=s[j]*s[i]*(s[i]-1) div 2
+        else if k=j then t+=s[i]*s[k]*(s[k]-1) div 2
+        else t+=s[i]*s[j]*s[k];
       // Ч+Ч+Н
       if i=j then t+=c[i]*(c[i]-1) div 2 * s[k]
       else t+=c[i]*c[j]*s[k];
