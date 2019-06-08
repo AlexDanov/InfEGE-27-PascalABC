@@ -17,3 +17,4 @@ begin
   if m=r then writeln('Значения совпали')
   else writeln('Значения не совпали');
 end.
+// 6 7 8 9 0 64 => 63

@@ -4,13 +4,9 @@ begin
   while true do begin
     read(x);
     if x=0 then break;
-    k:=0; tx :=x;
-    while (x mod 7 = 0) and (k<1) do begin
-      k+=1;
-      x := x div 7;
-    end;
-    if tx>m[k] then m[k]:=tx;
-    n+=1;
+    (k,tx,n):=(0,x,n+1);
+    while (x mod 7 = 0) and (k<1) do (k,x):=(k+1,x div 7);
+    m[k]:=max(tx,m[k]);
   end;
   read(r);
   mp := m[0]*m[1];
@@ -21,3 +17,4 @@ begin
   if mp=r then writeln('Значения совпали')
   else writeln('Значения не совпали');
 end.
+// 6 7 8 9 0 64 => 63
