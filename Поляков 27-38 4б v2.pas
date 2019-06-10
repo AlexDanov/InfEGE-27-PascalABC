@@ -1,13 +1,13 @@
-﻿var a,b,h0,h,hmax:integer;
+﻿var a,b,h,hmax:integer;
 begin
   read(a,b);
-  h0 :=a; h:=0; hmax:=0;
+  h:=0; hmax:=0;
   while b>0 do begin
     if a<b then begin
-      h:=b-h0;
+      h+=(b-a);
       if h>hmax then hmax:=h;
     end else
-      h0:=b;
+      h:=0;
     a:=b; read(b);
   end;
   writeln(hmax);
