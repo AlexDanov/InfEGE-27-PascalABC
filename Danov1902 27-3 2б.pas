@@ -1,4 +1,4 @@
-﻿var n,i,j,k,f,maxs:integer;
+﻿var n,i,j,f,maxs:integer;
     a:array[1..10000] of integer;
 begin
   read(n); maxs:=0;

@@ -15,10 +15,6 @@ begin
     end;
   end;
   k+=L[0]*R[0]+L[1]*R[2]+L[2]*R[1];
-  for j:=0 to 2 do begin 
-    L[j]:=L[j]+R[j];
-    R[j]:=0;
-  end;
   writeln(k);
 end.
 // 10 1 2 0 3 4 0 5 6 0 7 => 6
