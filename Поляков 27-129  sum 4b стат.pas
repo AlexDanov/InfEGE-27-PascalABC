@@ -16,6 +16,6 @@ begin
   k:=s[0]*t[0]+s[0]*(s[0]-1)div 2;
   k+=s[m2]*t[m2]+s[m2]*(s[m2]-1)div 2;
   for i:=1 to m2-1 do
-    k+=s[i]*(s[m-i]+t[m-i]);
+    k+=s[i]*s[m-i]+s[i]*t[m-i]+s[m-i]*t[i];
   print(k);
 end.
