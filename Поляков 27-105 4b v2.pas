@@ -1,15 +1,15 @@
-﻿const s=5;
-var b:array[0..s-1] of integer;
-    k:array[0..4] of integer=(0,0,0,0,0);
-    n,i,j,r:integer;
+﻿var b:array[1..6] of integer;
+    L:array[0..4] of integer=(0,0,0,0,0);
+    i,j,n,k:integer;
 begin
-  read(n); r:=0;
-  for i:=0 to s-1 do read(b[i]);
-  for i:=s to n-1 do begin
-    k[b[i mod s] mod 5]+=1;
-    read(b[i mod s]);
-    r+=k[b[i mod s] mod 5];
+  read(n);
+  k:=0;
+  for i:=1 to 5 do read(b[i]);
+  for i:=6 to n do begin
+    read(b[6]);
+    L[b[1]mod 5]+=1;
+    k+=L[b[6] mod 5];
+    for j:=1 to 5 do b[j]:=b[j+1];
   end;
-  writeln(r);
+  print(k);
 end.
-// 10 1 2 3 4 5 6 7 8 9 10 => 5
